@@ -1,0 +1,17 @@
+<div id="wrapper">
+  <h1>Anonymous Notes</h1>
+  <form (submit)='onSubmit()'>
+    Note: <br>
+    <textarea cols="40" rows="3" 
+    required
+    minlength='3'
+    name='content'
+    [(ngModel)]='newnote.content'
+    #content = 'ngModel'></textarea> 
+    <br>
+    <input type="submit" value="Add Note">
+  </form>
+  <div id='red' *ngIf='content.errors && content.dirty'>The note should be a minimum of 3 characters</div>
+  <br>
+  <app-notes [inputNotes]='notes'></app-notes>
+</div>

@@ -1,0 +1,14 @@
+<div id="wrapper">
+  <div *ngIf='inputNotes.length != 0'>
+    <div id="post" *ngFor='let element of inputNotes'>
+      <p id='date'>Noted on: {{element.created_at | date:'fullDate'}}, {{element.created_at | date:'mediumTime'}}</p>
+      <p>{{element.content}}</p>
+    </div>
+  </div>
+  <div *ngIf='inputNotes.length == 0'>
+    <div id="post" *ngFor='let element of notes'>
+      <p id='date'>Noted on: {{element.created_at | date:'fullDate'}}, {{element.created_at | date:'mediumTime'}}</p>
+      <p>{{element.content}}</p>
+    </div>
+  </div>
+</div>
